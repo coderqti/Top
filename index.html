@@ -12,12 +12,12 @@
 </head>
 <body class="font-sans bg-gray-50">
     <header class="bg-gray-800 text-white">
-        <div class="container mx-auto flex justify-between items-center py-4">
+        <div class="container mx-auto flex justify-between items-center py-6">
             <div class="logo">
                 <img src="logo.png" alt="TopWorld Movers" class="h-12">
             </div>
             <nav>
-                <ul class="flex space-x-4">
+                <ul class="flex space-x-6">
                     <li><a href="index.html" class="hover:underline active:text-orange-500">Home</a></li>
                     <li><a href="about.html" class="hover:underline">About Us</a></li>
                     <li><a href="services.html" class="hover:underline">Services</a></li>
@@ -25,78 +25,100 @@
                     <li><a href="contact.html" class="hover:underline">Contact Us</a></li>
                 </ul>
             </nav>
+            <button id="menu-button" class="md:hidden">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
+                </svg>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero bg-cover bg-center text-white relative" style="background-image: url('hero-bg.jpg');">
-        <div class="container mx-auto text-center py-48">
-            <h1 class="text-6xl font-bold mb-4 animate-fadeIn">Moving You Forward</h1>
-            <p class="text-2xl mb-8 animate-slideUp">We handle every move with care and precision.</p>
-            <a href="services.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 animate-bounce">Explore Our Services</a>
+    <section class="hero bg-cover bg-center text-white relative py-32" style="background-image: url('hero-bg.jpg');">
+        <div class="container mx-auto text-center">
+            <h1 class="text-6xl font-bold mb-6 animate-fadeIn">Moving You Forward</h1>
+            <p class="text-2xl mb-12 animate-slideUp">We handle every move with care and precision.</p>
+            <a href="services.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 animate-bounce">Explore Our Services</a>
         </div>
-        <!-- Partners Section -->
-        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-4">
-            <h2 class="text-2xl font-bold mb-4 text-center">Our Trusted Partners</h2>
-            <div class="flex flex-wrap justify-center items-center">
-                <div class="partner-logo mx-4 mb-4">
-                    <img src="assets/partners/bomas-of-kenya-ltd.jfif" alt="Partner 1" class="h-16 md:h-24">
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8">
+            <h2 class="text-2xl font-bold mb-6 text-center">Our Trusted Partners</h2>
+            <div class="partners-carousel relative overflow-hidden w-full max-w-xl mx-auto">
+                <div id="partners-container" class="flex transition-transform duration-300 ease-in-out">
+                    <div class="partner-logo flex-shrink-0 mx-5 mb-6">
+                        <img src="assets/partners/bomas-of-kenya-ltd.jfif" alt="Partner 1" class="h-20 md:h-28 w-auto">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 mx-5 mb-6">
+                        <img src="assets/partners/hivos-pple-ltd.png" alt="Partner 2" class="h-20 md:h-28 w-auto">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 mx-5 mb-6">
+                        <img src="assets/partners/perigrinus-fire-ltd.jfif" alt="Partner 3" class="h-20 md:h-28 w-auto">
+                    </div>
+                    <div class="partner-logo flex-shrink-0 mx-5 mb-6">
+                        <img src="assets/partners/vetlab-club.jfif" alt="Partner 4" class="h-20 md:h-28 w-auto">
+                    </div>
                 </div>
-                <div class="partner-logo mx-4 mb-4">
-                    <img src="assets/partners/hivos-pple-ltd.png" alt="Partner 2" class="h-16 md:h-24">
-                </div>
-                <div class="partner-logo mx-4 mb-4">
-                    <img src="assets/partners/perigrinus-fire-ltd.jfif" alt="Partner 3" class="h-16 md:h-24">
-                </div>
-                <div class="partner-logo mx-4 mb-4">
-                    <img src="assets/partners/vetlab-club.jfif" alt="Partner 4" class="h-16 md:h-24">
-                </div>
+                <button id="prev-partner" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-blue-500 text-white rounded-full p-2 hover:bg-blue-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="next-partner" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-blue-500 text-white rounded-full p-2 hover:bg-blue-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
+    
+    
 
-    <!-- Why Choose Us Section -->
-    <section class="py-16">
+    <section class="py-20">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6">Why Choose Us?</h2>
-            <p class="mb-12">TopWorld Movers provides professional and reliable moving services tailored to your needs.</p>
+            <h2 class="text-4xl font-bold mb-8">Why Choose Us?</h2>
+            <p class="mb-16 text-gray-700">TopWorld Movers provides professional and reliable moving services tailored to your needs.</p>
             <!-- Additional content about services and advantages -->
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4">
+    <footer class="bg-gray-800 text-white py-6">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="footer-social flex space-x-4">
+            <div class="footer-social flex space-x-5">
                 <a href="https://www.instagram.com" class="instagram" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/instagram.svg" alt="Instagram" class="h-6">
                 </a>
                 <a href="https://facebook.com" class="facebook" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/facebook.svg" alt="Facebook" class="h-6">
                 </a>
                 <a href="https://twitter.com" class="twitter" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/twitter.svg" alt="Twitter" class="h-6">
                 </a>
                 <a href="https://www.tiktok.com" class="tiktok" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/TikTok_logo.svg" alt="TikTok">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/tiktok.svg" alt="TikTok" class="h-6">
                 </a>
             </div>
-            <div class="footer-links flex space-x-4">
-                <a href="index.html" class="hover:underline">Home</a> | 
-                <a href="about.html" class="hover:underline">About Us</a> | 
-                <a href="services.html" class="hover:underline">Services</a> | 
-                <a href="testimonials.html" class="hover:underline">Testimonials</a> | 
+            <div class="footer-links flex space-x-6">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="about.html" class="hover:underline">About Us</a>
+                <a href="services.html" class="hover:underline">Services</a>
+                <a href="testimonials.html" class="hover:underline">Testimonials</a>
                 <a href="contact.html" class="hover:underline">Contact Us</a>
             </div>
         </div>
-        <div class="text-center text-xs mt-4">
+        <div class="text-center text-sm mt-6">
             &copy; 2024 TopWorld Movers. All Rights Reserved.
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Chat Button -->
+    <div id="mobile-menu" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
     <a href="https://wa.me/254713588549" class="fixed bottom-4 left-4 bg-green-500 text-white rounded-full p-3 shadow-lg hover:shadow-xl transition duration-300" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-12 h-12">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/whatsapp.svg" alt="WhatsApp" class="w-10 h-10">
     </a>
 
     <script src="assets/script.js"></script>

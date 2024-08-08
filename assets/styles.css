@@ -73,7 +73,7 @@ header nav ul {
 }
 
 header nav ul li a {
-    padding: 10px 15px;
+    padding: 12px 18px;
     color: #fff;
     transition: color 0.3s ease;
 }
@@ -85,17 +85,17 @@ header nav ul li a.active {
 
 /* Mobile Menu */
 #mobile-menu {
-    display: none; /* Hidden by default */
+    background-color: #2d3748; /* Dark gray */
+    padding: 1rem;
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     max-width: 300px;
-    background-color: #2d3748; /* Dark gray */
-    padding: 1rem;
-    z-index: 1000;
     height: 100%;
     overflow-y: auto;
+    z-index: 1000;
+    display: none;
 }
 
 #mobile-menu a {
@@ -105,39 +105,34 @@ header nav ul li a.active {
     font-size: 1.5rem;
     text-align: center;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 #mobile-menu a:hover {
     color: #FFA500; /* Orange color on hover */
 }
 
-#menu-button {
-    display: none;
-}
-
 /* Hero Section */
 .hero {
     background-size: cover;
     background-position: center;
-    padding: 3rem 1rem;
-    color: #fff;
     position: relative;
 }
 
 .hero h1 {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     animation: fadeIn 1.5s ease-out;
 }
 
 .hero p {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     animation: slideUp 2s ease-out;
 }
 
 .hero a {
-    padding: 12px 24px;
+    padding: 12px 32px;
     background-color: #3182ce;
     color: #fff;
     border-radius: 9999px;
@@ -150,73 +145,58 @@ header nav ul li a.active {
     background-color: #2b6cb0;
 }
 
-/* Partners Section */
-.partners-section img {
-    transition: transform 0.3s ease;
-}
-
-.partners-section img:hover {
-    transform: scale(1.1);
-}
-
-/* Testimonials Section */
-.testimonials-carousel {
+/* Partners Carousel */
+.partners-carousel {
     position: relative;
 }
 
-.testimonials-grid {
+.partners-grid {
     display: flex;
-    overflow: hidden;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
-    transition: transform 0.5s ease;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
 }
 
-.testimonial-card {
-    scroll-snap-align: start;
-    flex: 0 0 100%;
-    min-width: 300px;
-    margin: 0 1rem;
-    padding: 2rem;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+.partners-grid::-webkit-scrollbar {
+    display: none;
 }
 
-.testimonial-card img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
+.partner-logo {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    margin-right: 1rem;
 }
 
-#prev-testimonial,
-#next-testimonial {
+.partner-logo img {
+    transition: transform 0.3s ease;
+}
+
+.partner-logo img:hover {
+    transform: scale(1.1);
+}
+
+#prev-partner,
+#next-partner {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #3182ce;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#prev-testimonial {
-    left: 0;
+#prev-partner {
+    left: 1rem;
 }
 
-#next-testimonial {
-    right: 0;
+#next-partner {
+    right: 1rem;
 }
 
 /* Footer Styles */
 footer {
     background-color: #2d3748; /* Dark gray */
     color: #fff;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -230,7 +210,7 @@ footer {
 }
 
 .footer-social a {
-    margin: 0 8px;
+    margin: 0 10px;
     color: inherit;
     transition: box-shadow 0.3s ease;
 }
@@ -247,7 +227,7 @@ footer {
 }
 
 .footer-links a {
-    margin: 0 8px;
+    margin: 0 10px;
     color: #fff;
     transition: color 0.3s ease;
 }
@@ -258,7 +238,7 @@ footer {
 
 .footer-copyright {
     text-align: center;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     font-size: 0.875rem;
     color: #ddd;
 }
@@ -281,14 +261,6 @@ footer {
         display: block; /* Show mobile menu */
     }
 
-    .testimonials-grid {
-        flex-direction: column;
-    }
-
-    .container {
-        padding: 0 1rem;
-    }
-
     .hero {
         padding: 3rem 1rem;
     }
@@ -297,32 +269,6 @@ footer {
     .footer-social {
         text-align: center;
     }
-}
-
-/* Social Media Icons Glow Effect on Hover */
-.footer-social a {
-    margin: 0 8px;
-    color: inherit;
-    transition: filter 0.3s ease, box-shadow 0.3s ease;
-}
-
-.footer-social a img {
-    height: 24px;
-    transition: filter 0.3s ease;
-}
-
-/* Social Media Icons Default Colors */
-.footer-social a.facebook img {
-    filter: none; /* Facebook blue color */
-}
-
-.footer-social a.twitter img {
-    filter: none; /* Twitter blue color */
-}
-
-.footer-social a:hover img {
-    filter: none; /* No change in filter for the glow effect */
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.7); /* Glow effect */
 }
 
 /* Floating WhatsApp Button */

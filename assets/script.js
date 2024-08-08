@@ -77,3 +77,39 @@ const preloadImages = () => {
 };
 
 window.addEventListener('load', preloadImages);
+
+// Partners Carousel Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('partners-container');
+    const partnerLogos = container.children;
+    const prevButton = document.getElementById('prev-partner');
+    const nextButton = document.getElementById('next-partner');
+    
+    let currentIndex = 0;
+    const totalLogos = partnerLogos.length;
+    const logoWidth = partnerLogos[0].offsetWidth;
+    
+    function updateCarousel() {
+        container.style.transform = `translateX(-${currentIndex * logoWidth}px)`;
+    }
+
+    nextButton.addEventListener('click', function () {
+        if (currentIndex < totalLogos - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevButton.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    // Optional: Auto-scroll every few seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalLogos;
+        updateCarousel();
+    }, 3000);
+});
